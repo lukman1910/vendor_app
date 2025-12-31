@@ -1,0 +1,107 @@
+// 1. DAFTAR ADMIN
+// Ganti dengan email Google asli yang kamu gunakan agar bisa masuk ke Dashboard
+export const ADMIN_WHITELIST = [
+  "sulthanlukman@gmail.com",
+  "dentwahyudin@gmail.com",
+  "bayf52@gmail.com",
+];
+
+// 2. KATEGORI PEKERJAAN TEKNIS
+export const JOB_TYPES = [
+  "Perbaikan AC",
+  "Maintenance Rutin",
+  "Pengecekan Kelistrikan",
+  "Instalasi Jalur Pipa",
+  "Lain-lain",
+];
+
+// 3. DAFTAR GEDUNG & AREA PEMKOT BEKASI
+export const BUILDINGS = [
+  "Gedung A",
+  "Gedung B",
+  "Gedung C",
+  "Gedung D",
+  "Gedung PKK",
+  "Gedung TPA",
+  "Gedung Balai Patriot",
+  "Area Perkantoran",
+  "Luar Perkantoran",
+  "Gedung Korpri",
+  "Lingkungan Kantor Pemerintah (Juanda)",
+  "Area Landscape",
+  "Rumah Dinas",
+  "Danau Barat",
+  "Carway",
+  "Staff Ahli",
+];
+
+// 4. PEMETAAN LANTAI / SUB-AREA BERDASARKAN GEDUNG
+export const BUILDING_FLOORS: Record<string, string[]> = {
+  "Gedung A": ["Masjid", "BPBD", "1", "2", "All Area", "Taman", "BPSK"],
+  "Gedung B": ["1", "2", "3", "Dasar", "Rooftop", "All Area", "Taman"],
+  "Gedung C": ["1", "2", "3", "Dasar", "All Area", "Taman"],
+  "Gedung D": [
+    "Basement",
+    "Dasar",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "Rooftop",
+    "Taman",
+  ],
+  "Gedung PKK": ["1", "2"],
+  "Gedung TPA": ["1", "Taman"],
+  "Gedung Balai Patriot": ["1", "2", "All Area"],
+  "Area Perkantoran": [
+    "Kantor Wali Kota",
+    "Staff Ahli Wali Kota",
+    "BPSK",
+    "Lapangan Tennis",
+    "Rumah Kompos",
+    "Ruangan Lighthouse BKPPD",
+    "Kantor Dinas Wali Kota",
+    "PWRI",
+    "Pendopo",
+    "Masyarakat Ekonomi Syariah (MES)",
+  ],
+  "Luar Perkantoran": [
+    "Pos Satpol Gerbang Utara",
+    "Pos Satpol Gerbang Barat",
+    "Pos Satpol Gerbang Timur",
+    "Pos Satpol Gerbang Selatan",
+  ],
+  "Gedung Korpri": ["Taman"],
+  "Lingkungan Kantor Pemerintah (Juanda)": ["Taman"],
+  "Area Landscape": [
+    "Plaza",
+    "Parkir Mobil Tamu (Area Danau)",
+    "Danau Besar",
+    "Kolam Air Mancur (Masjid)",
+    "Kolam Renang",
+    "Ruang Rapat Terbuka",
+    "Area Parkir Gedung A",
+    "Area Parkir Gedung B",
+    "Area Parkir Gedung C",
+    "Area Parkir Gedung D",
+    "Area Parkir Motor",
+    "Lapangan Tennis",
+    "Taman Rusa",
+    "Area Parkir Gedung TPA",
+    "Area Parkir Gedung PKK",
+    "Area Parkir Gedung Balai Patriot",
+    "Taman Toga",
+    "Danau Masjid",
+    "TPS",
+    "Carway",
+  ],
+  "Rumah Dinas": ["Kolam Renang", "All Area"],
+  "Danau Barat": ["Area Danau", "Taman", "All Area"],
+  Carway: ["Taman", "All Area"],
+  "Staff Ahli": ["1", "All Area"],
+};

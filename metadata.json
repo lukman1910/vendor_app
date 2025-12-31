@@ -1,0 +1,7 @@
+{
+  "name": "Airkon Vendor Reporting System",
+  "description": "Sistem pelaporan aktivitas vendor di lingkungan Pemkot Bekasi untuk PT. AIRKON PRATAMA. Memungkinkan pencatatan pekerjaan, dokumentasi foto, dashboard admin, dan ekspor data.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

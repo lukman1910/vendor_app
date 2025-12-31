@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airkon - Vendor Reporting System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+              'pulse-soft': 'pulseSoft 3s infinite',
+              'shake': 'shake 3s cubic-bezier(.36,.07,.19,.97) infinite',
+              'blob': 'blob 15s infinite',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              pulseSoft: {
+                '0%, 100%': { opacity: '1' },
+                '50%': { opacity: '0.8' },
+              },
+              shake: {
+                '0%, 100%': { transform: 'translateX(0)' },
+                '2%, 6%': { transform: 'translateX(-3px)' },
+                '4%, 8%': { transform: 'translateX(3px)' },
+                '10%': { transform: 'translateX(0)' },
+              },
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        body { 
+          font-family: 'Inter', sans-serif; 
+          overflow-x: hidden;
+          background-color: #f8fafc;
+        }
+        
+        .bg-mesh {
+          background-color: #f8fafc;
+          background-image: 
+            radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.05) 0px, transparent 50%),
+            radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%);
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -2;
+        }
+
+        .bg-dots {
+          background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+          background-size: 24px 24px;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          opacity: 0.4;
+        }
+
+        .glass-nav {
+          background: rgba(255, 255, 255, 0.7);
+          backdrop-filter: blur(12px) saturate(180%);
+          -webkit-backdrop-filter: blur(12px) saturate(180%);
+          border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .logo-gradient {
+          background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "xlsx": "https://esm.sh/xlsx@^0.18.5"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div class="bg-mesh"></div>
+    <div class="bg-dots"></div>
+    
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+      <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-100/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+      <div class="absolute top-[20%] right-[-5%] w-[35%] h-[35%] bg-indigo-100/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob" style="animation-delay: 2s;"></div>
+      <div class="absolute bottom-[-10%] left-[20%] w-[45%] h-[45%] bg-blue-50/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob" style="animation-delay: 4s;"></div>
+    </div>
+
+    <div id="root"></div>
+    <!-- Point to index.tsx for Vite -->
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
