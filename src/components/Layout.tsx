@@ -3,7 +3,7 @@ import { User, UserRole } from "../../types";
 import { LogOut } from "lucide-react";
 import { Toaster } from "react-hot-toast"; // Import Toaster untuk notifikasi
 // path import: biasanya ../assets/ jika di dalam folder components
-import LogoAirkon from "../assets/AP2.png";
+import LogoAirkon from "../src/assets/AP2.png";
 
 interface LayoutProps {
   children: React.ReactNode;
