@@ -43,7 +43,7 @@ const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
 
   const ADMIN_EMAILS = [
     "sulthanlukman@gmail.com",
-    "wahyudin.airkon@gmail.com",
+    "dentwahyudin@gmail.com",
     "bayf52@gmail.com",
   ];
 
