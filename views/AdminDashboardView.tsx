@@ -331,25 +331,83 @@ const AdminDashboardView: React.FC<AdminDashboardViewProps> = ({
         </div>
       </div>
 
-      {/* Modal Detail & Edit (Layout Modern) */}
+      {/* MODAL DETAIL DOKUMENTASI */}
       {selectedJob && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-0 md:p-6 bg-slate-900/80 backdrop-blur-md animate-in fade-in">
-          <div className="bg-white w-full max-w-6xl h-full md:h-auto md:max-h-[90vh] md:rounded-[48px] shadow-2xl overflow-hidden flex flex-col animate-in zoom-in-95">
-            <div className="px-8 py-6 border-b flex justify-between items-center bg-white sticky top-0 z-10">
-              <h2 className="text-xl md:text-2xl font-black text-slate-900">
-                {isEditMode ? "Edit Laporan" : "Detail Dokumentasi"}
-              </h2>
+        <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300">
+          <div className="bg-white w-full max-w-4xl rounded-[40px] shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            {/* Header Modal - Yang muncul di gambar Anda */}
+            <div className="px-8 py-6 border-b border-slate-100 flex justify-between items-center bg-white sticky top-0 z-10">
+              <div>
+                <h2 className="text-2xl font-black text-slate-900">
+                  Detail Dokumentasi
+                </h2>
+                <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">
+                  ID Laporan: {selectedJob.id}
+                </p>
+              </div>
               <button
-                onClick={() => {
-                  setSelectedJob(null);
-                  setIsEditMode(false);
-                }}
-                className="p-3 bg-slate-100 hover:bg-slate-200 rounded-full transition-all"
+                onClick={() => setSelectedJob(null)}
+                className="p-3 hover:bg-slate-100 rounded-full transition-colors text-slate-400"
               >
-                <X size={26} />
+                <X size={24} />
               </button>
             </div>
-            {/* ... Modal Body  ... */}
+
+            {/* Body Modal - Pastikan bagian ini ada agar tidak kosong */}
+            <div className="p-8 overflow-y-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                {/* Info Teknis */}
+                <div className="space-y-6">
+                  <div className="bg-slate-50 p-6 rounded-[32px] border border-slate-100">
+                    <span className="text-[10px] font-black text-blue-500 uppercase tracking-widest block mb-3">
+                      Laporan Aktivitas
+                    </span>
+                    <p className="text-slate-700 leading-relaxed italic font-medium">
+                      "{selectedJob.description}"
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-slate-50 p-5 rounded-[24px]">
+                      <span className="text-[10px] font-black text-slate-400 uppercase block mb-1">
+                        Gedung
+                      </span>
+                      <p className="font-bold text-slate-900">
+                        {selectedJob.building}
+                      </p>
+                    </div>
+                    <div className="bg-slate-50 p-5 rounded-[24px]">
+                      <span className="text-[10px] font-black text-slate-400 uppercase block mb-1">
+                        Lantai / Ruang
+                      </span>
+                      <p className="font-bold text-slate-900">
+                        {selectedJob.floor} - {selectedJob.room}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Galeri Foto */}
+                <div className="space-y-4">
+                  <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                    Foto Lapangan
+                  </h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    {selectedJob.photos?.map((p: any, i: number) => (
+                      <div
+                        key={i}
+                        className="aspect-square rounded-[24px] overflow-hidden bg-slate-100 border-4 border-slate-50 shadow-sm"
+                      >
+                        <img
+                          src={getPublicUrl(p)}
+                          className="w-full h-h-full object-cover"
+                          alt="dokumentasi"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
